@@ -138,7 +138,7 @@ describe FastJsonapi::ObjectSerializer do
     it 'returns errors when serializing with non-existent includes key' do
       options = {}
       options[:meta] = { total: 2 }
-      options[:include] = [:blah_blah]
+      options[:include] = [:actors, :blah_blah]
       expect { MovieSerializer.new([movie, movie], options).serializable_hash }.to raise_error(ArgumentError)
     end
 
